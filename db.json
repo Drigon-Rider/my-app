@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Avas pqqqqqqqqqqdsb",
+      "email": "ava.mercer@example.com",
+      "createdAt": "2025-11-10T12:34:56Z",
+      "isActive": true,
+      "score": 73.4
+    },
+    {
+      "id": "2",
+      "name": "Liam Ortega",
+      "email": "liam.ortega@example.com",
+      "createdAt": "2024-06-22T08:15:00Z",
+      "isActive": false,
+      "score": 41.9
+    },
+    {
+      "id": "3",
+      "name": "Zoe Nakamura",
+      "email": "zoe.nakamura@example.com",
+      "createdAt": "2025-01-05T19:05:30Z",
+      "isActive": true,
+      "score": 88.2
+    }
+  ],
+  "nonUsers": [
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "id": "b6df"
+    },
+    {
+      "id": "b8b2",
+      "name": "kasndclka",
+      "email": "namshang715@gmail.com"
+    },
+    {
+      "id": "963d",
+      "name": "kldfm",
+      "email": "akjsdnsak"
+    },
+    {
+      "id": "29ff",
+      "name": "sjfkls",
+      "email": "skdfnjs"
+    },
+    {
+      "id": "7763",
+      "name": "sdpofk",
+      "email": "slkdf"
+    },
+    {
+      "id": "1ec2",
+      "name": "csdc",
+      "email": "zxc"
+    },
+    {
+      "id": "47e8",
+      "name": "abc",
+      "email": "zxc"
+    },
+    {
+      "id": "50cd",
+      "name": "sijf",
+      "email": "lasdjca"
+    },
+    {
+      "id": "39b3",
+      "name": "hhhhhhh",
+      "email": "lasdjca"
+    },
+    {
+      "id": "9637",
+      "name": "ccc",
+      "email": "sdc"
+    },
+    {
+      "id": "a20a",
+      "name": "oiajdas",
+      "email": "lksdcm"
+    },
+    {
+      "id": "0828",
+      "name": "asda",
+      "email": "df"
+    }
+  ]
+}
