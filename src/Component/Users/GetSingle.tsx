@@ -1,4 +1,4 @@
-import { useState } from "react";
+// (no React hooks needed here)
 import { GetSingleUser } from "../../Hooks/UserHook";
 import {useLogout} from '../../Hooks/AuthHook'
 import { getUserFromToken } from "../Cart/decodeJwt";
@@ -17,8 +17,7 @@ const GetSingle = () => {
   if (!token) token = sessionStorage.getItem('authToken')
   const UID = getUserFromToken(token).id;
   const logout = useLogout();
-  const [id, setId] = useState(UID || 0);
-  const [message, setMessage] = useState<string | null>(null);
+  const id = UID || 0;
   const { data: user, isLoading, isError } = GetSingleUser(id);
 
   if (isLoading) return <div className="p-4">Loading...</div>;
@@ -35,11 +34,7 @@ const GetSingle = () => {
         </div>
       </div>
 
-      {message && (
-        <div className={`mb-4 text-sm ${message.includes('failed') ? 'text-red-700' : 'text-green-700'}`}>
-          {message}
-        </div>
-      )}
+      
 
       {user ? (
         <div className="bg-white border rounded-md shadow-sm p-6">

@@ -1,7 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import axios from 'axios'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { useDeleteProduct } from '../../Hooks/CartHook'
 import { getUserFromToken } from './decodeJwt'
 
 
@@ -45,10 +44,8 @@ type CartItem = {
   image?: string
   quantity: number
 }
-
-export default function MainCart() {
+const MainCart = () => {
   const queryClient = useQueryClient()
-  const deleteCartMutation = useDeleteProduct()
 
   const [userId, setUserId] = useState<number | null>(null)
   const [resolvingUser, setResolvingUser] = useState(true)
@@ -167,3 +164,4 @@ export default function MainCart() {
     </div>
   )
 }
+export default MainCart

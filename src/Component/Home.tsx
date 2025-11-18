@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function Home() {
   const [count, setCount] = useState(0);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() =>{
     axios.get('http://localhost:5173/db.json').then((res)=>{
@@ -13,6 +13,8 @@ function Home() {
     })
 
   }, [])
+
+  if (isLoading) return <div className="p-4">Loading...</div>
 
   return (
     <div className="App">
@@ -26,8 +28,8 @@ function Home() {
         </button>
       </header>
       <div>
-        {data.map((users)=>{
-            return<div key= {users.name}>{users.name}</div>
+        {data.map((users: any) => {
+          return <div key={users.name}>{users.name}</div>
         })}
       </div>
     </div>

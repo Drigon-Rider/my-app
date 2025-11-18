@@ -1,10 +1,10 @@
 import Layout from "../Component/Layout";
-import CartPage from '../Component/Cart/mainCart';
+import MainCart from '../Component/Cart/MainCart';
 
 const CartPageWrapper = () => {
   return (
     <Layout>
-      <CartPage />
+      <MainCart />
     </Layout>
   )
 }

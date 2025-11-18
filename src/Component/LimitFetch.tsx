@@ -6,9 +6,9 @@ const fetchLimitedProducts = async (limit: number) => {
   return response.data;
 };
 
-const LimitFetch = ({ initialLimit = 3 }) => {
-  const [limit, setLimit] = useState(initialLimit);
-  const [data, setData] = useState([]);
+const LimitFetch = ({ initialLimit = 3 }: { initialLimit?: number }) => {
+  const [limit, setLimit] = useState<number>(initialLimit);
+  const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -23,7 +23,7 @@ const LimitFetch = ({ initialLimit = 3 }) => {
       <h1 className="text-xl font-bold mb-4">Limited Fetch Component</h1>
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {data.map((product) => (
+        {data.map((product: any) => (
           <article
             key={product.id}
             className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-4 flex flex-col cursor-pointer"

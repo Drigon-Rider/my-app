@@ -1,18 +1,21 @@
 import axios from 'axios'
-import {useQueries} from '@tanstack/react-query'
+import { useQueries } from '@tanstack/react-query'
 
-const fetchResult = async(id) =>{
-    const res = await axios.get('https://fakestoreapi.com/products/'+id);
-    return res.data;
+const fetchResult = async (id: number) => {
+    const res = await axios.get('https://fakestoreapi.com/products/' + id)
+    return res.data
 }
-const Dynamic = ({hid}) => {
-    const reslut = useQueries({
-        queries: hid.map((id) =>({
+
+type DynamicProps = { hid: number[] }
+const Dynamic = ({ hid }: DynamicProps) => {
+    const result = useQueries({
+        queries: hid.map((id: number) => ({
             queryKey: ['cloths', id],
             queryFn: () => fetchResult(id),
         })),
-    });
-    console.log(reslut);
-  return <div>This is a dynamically loaded page.</div>;
-};
-export default Dynamic; 
+    })
+    console.log(result)
+    return <div>This is a dynamically loaded page.</div>
+}
+
+export default Dynamic

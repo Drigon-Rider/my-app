@@ -1,11 +1,12 @@
 import axios from 'axios';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 
+export type CartCreate = { userId: number; products: { productId: number }[] }
 export const useAddToCart = () => {
     const queryClient = useQueryClient();
-    return useMutation({
+    return useMutation<any, unknown, CartCreate>({
         mutationKey:['add-cart'],
-        mutationFn: async (cart) =>{
+        mutationFn: async (cart: CartCreate) =>{
             const res= await axios.post('https://fakestoreapi.com/carts', cart);
             return res.data;
         },
@@ -18,9 +19,9 @@ export const useAddToCart = () => {
 
 export const useUpdateProduct = () => {
     const queryClient = useQueryClient();
-    return useMutation({
+    return useMutation<any, unknown, any>({
         mutationKey:['update-cart'],
-        mutationFn: async (cart) =>{
+        mutationFn: async (cart: any) =>{
             const res= await axios.put('https://fakestoreapi.com/carts/1', cart);
             return res.data;
         },
@@ -32,10 +33,10 @@ export const useUpdateProduct = () => {
 };
 
 export function useDeleteProduct() {
-  return useMutation({
-    mutationFn: async (cartId: number) => {
-      const response = await axios.delete(`https://fakestoreapi.com/carts/${cartId}`)
-      return response.data
-    },
-  })
+    return useMutation<any, unknown, number>({
+        mutationFn: async (cartId: number) => {
+            const response = await axios.delete(`https://fakestoreapi.com/carts/${cartId}`)
+            return response.data
+        },
+    })
 }

@@ -1,5 +1,4 @@
 import GetSingle from "./GetSingle";
-import AddUsers from "./AddUsers";
 
 const UserPage = () => {
     return (

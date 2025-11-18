@@ -4,15 +4,13 @@ import Initial from './Component/Initial'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import InsertProduct from './Component/InsertProduct'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-// import ProductDetail from './Component/ProductDetail.page'
-import Dynamic from './Component/Dynamic.page'
 import LimitFetch from './Component/LimitFetch'
 import AddNonUsers from './Component/AddNonUsers'
 import CartPageWrapper from './Pages/CartPage'
 import HomePage from './Pages/HomePage'
 import LoginPageWrapper from'./Pages/LoginPage.page'
 import UserPageWrapper from './Pages/UserPage.page'
-import MainCart from './Component/Cart/mainCart'
+import MainCart from './Component/Cart/MainCart'
 import ProductDetailMain from './Pages/ProductDetailMain.page'
 
 const queryClient = new QueryClient()
@@ -29,7 +27,6 @@ export default function App() {
             <Route path="/products" element={<HomePage />} />
             <Route path="/insert-product" element={<InsertProduct />} />
             <Route path="/product-detail/:id" element={<ProductDetailMain />} />
-            <Route path="/Dynamic" element ={<Dynamic hid={[1,3]}/>} />
             <Route path="/LimitFetch" element ={<LimitFetch initialLimit={5}/>} />
             <Route path="/notUsers" element ={<AddNonUsers />} />
             <Route path="/cart" element ={<CartPageWrapper />} />
